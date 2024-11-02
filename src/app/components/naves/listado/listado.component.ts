@@ -4,7 +4,7 @@ import { nave } from '../../../../interfaces/nave';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-listado',
+  selector: 'app-listado-naves',
   standalone: true,
   imports: [NgFor],
   templateUrl: './listado.component.html',
@@ -15,7 +15,6 @@ export class ListadoNavesComponent {
   
   listaNaves : nave[] = [];
   
-  titulo: string = "Naves";
 
   constructor(
     private servicio: NavesService,
@@ -31,7 +30,6 @@ export class ListadoNavesComponent {
   cargarListado(){
      this.servicio.getListado().subscribe((data) => {
        this.listaNaves = data.results;
-       console.log("listado de naves a imprimir",this.listaNaves);
      })
   }
 

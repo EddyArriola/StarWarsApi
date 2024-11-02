@@ -1,1 +1,28 @@
-<p>listado works!</p>
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+        <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Planetas</h2>
+            </div> 
+            <div  class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+                <div  *ngFor="let item of listadoPlaneta" class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                    
+                    <div class="p-5" data-tooltip-target="tooltip-default">
+                        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white" >
+                            <a href="#">{{item.name}}</a>
+                        </h3>
+                        <ul>
+                            <li>periodo de rotacion: {{item.rotation_period}}</li>
+                            <li>periodo orbital: {{item.orbital_period}}</li>
+                            <li>agua superficial: {{item.surface_water}}</li>
+                            <li>poblacion: {{item.population}}</li>
+                            <li>gravedad: {{item.gravity}}</li>
+                        </ul>
+                        <a href="{{item.url}}">Ver Detalle del Planeta</a>
+                        <br>
+                        
+
+                    </div>
+                </div> 
+            </div> 
+    </div>
+  </section>

@@ -1,22 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiResponse } from '../../interfaces/models'
-import { nave } from '../../interfaces/nave';
+import { ApiResponse } from '../../interfaces/models';
+import { personaje } from '../../interfaces/personaje';
+
 @Injectable({
   providedIn: 'root'
 })
-export class NavesService {
-
+export class PersonajesService {
   private readonly _http = inject(HttpClient);
   
   private apiUrl = 'https://swapi.dev/api'
   constructor(private http: HttpClient) { }
 
-  getListado(): Observable<ApiResponse<nave[]>>{
-    return this.http.get<ApiResponse<nave[]>>(this.apiUrl + '/starships');
+  getListado(): Observable<ApiResponse<personaje[]>>{
+    return this.http.get<ApiResponse<personaje[]>>(this.apiUrl + '/people');
 
   }
-
-
 }
